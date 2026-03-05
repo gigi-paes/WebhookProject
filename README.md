@@ -2,9 +2,9 @@
 
 Este projeto é uma API intermediária desenvolvida em Node.js (Express) para conectar o RD Station Marketing e a plataforma Waboosty. 
 
-[cite_start]O objetivo é estruturar duas integrações bidirecionais[cite: 4, 5]:
-1. [cite_start]**Ida (RD Station -> Waboosty):** Capturar dados de um lead recém-convertido no RD Station e enviá-los para a Waboosty.
-2. [cite_start]**Volta (Waboosty -> RD Station):** Receber a atualização de status desse lead na Waboosty e atualizar o seu cadastro original no RD Station[cite: 5].
+O objetivo é estruturar duas integrações bidirecionais: <---->
+1. -----> **Ida (RD Station -> Waboosty):** Capturar dados de um lead recém-convertido no RD Station e enviá-los para a Waboosty.
+2. <----- **Volta (Waboosty -> RD Station):** Receber a atualização de status desse lead na Waboosty e atualizar o seu cadastro original no RD Station.
 
 ---
 
@@ -46,8 +46,8 @@ WABOOSTPROJECT/
 ---
 
 ## 📡 Endpoints (Rotas)
-1. POST /webhook/rd-station
+### 1. POST /webhook/rd-station
 Função: Recebe o Webhook do RD Station, formata o payload validando a integridade dos dados, adiciona o DDI ao telefone e envia via POST para a Waboosty.
 
-2. POST /webhook/waboosty
+### 2. POST /webhook/waboosty
 Função: Recebe o Webhook de atualização da Waboosty e faz uma requisição PATCH autenticada para o RD Station, atualizando o campo personalizado do lead correspondente.
